@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Shop - Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+ 
+</head>
+
+<body>
+  <!-- Play Button -->
+  <button id="play-btn">Play Music</button>
+
+  <!-- Stop Button -->
+  <button id="stop-btn">Stop Music</button>
+    <audio id="background-audio" autoplay loop>
+        <source src="audio2.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+    </div>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="customs.html">Customs</a>
+        <a href="about.html">About Us</a>
+        <div class="cart-icon">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <header>
+        
+        <h1>Daisy Shop</h1>
+        <p>Unique Gift Bouquets for Every Occasion</p>
+    </header>
+
+    <section class="products">
+        <h2>Gift Bouquets</h2>
+        <div class="product-grid">
+            <!-- Pink Bouquet -->
+            <div class="product" data-name="Pink Delight" data-price="Rs.5000"
+                data-description="A curated selection of makeup, self-care, and adorable accessories wrapped in a soft pink theme."
+                data-image="images/pink.webp"
+                data-items='["Lipstick Set", "Scented Candle", "Blush Palette", "Cozy Socks", "Face Mask"]'>
+                <img src="images/pink.webp" alt="Pink Gift Bouquet">
+                <div class="product-content">
+                    <h3>Pink Delight</h3>
+                    <p>Rs.5000</p>
+                    <button class="details-btn">Details</button>
+                </div>
+            </div>
+
+            <!-- Blue Bouquet -->
+            <div class="product" data-name="Blue Bliss" data-price="Rs.5500"
+                data-description="An elegant gift bouquet featuring stationery, skincare, and calming blue-toned items."
+                data-image="images/blue.webp"
+                data-items='["Notebook", "Pen Set", "Skincare Kit", "Stress Ball", "Journal"]'>
+                <img src="images/blue.webp" alt="Blue Gift Bouquet">
+                <div class="product-content">
+                    <h3>Blue Bliss</h3>
+                    <p>Rs.5500</p>
+                    <button class="details-btn">Details</button>
+                </div>
+            </div>
+
+            <!-- Yellow Bouquet -->
+            <div class="product" data-name="Sunny Surprise" data-price="Rs.4500"
+                data-description="A cheerful bouquet filled with gourmet chocolates, craft items, and sunny yellow-themed gifts."
+                data-image="images/yellow.webp"
+                data-items='["Gourmet Chocolates", "Crochet Kit", "Sunflower Mug", "Honey Jar", "Notepad"]'>
+                <img src="images/yellow.webp" alt="Yellow Gift Bouquet">
+                <div class="product-content">
+                    <h3>Sunny Surprise</h3>
+                    <p>Rs.4500</p>
+                    <button class="details-btn">Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Boxes Section -->
+    <section class="products">
+        <h2>Gift Boxes</h2>
+        <div class="product-grid">
+            <!-- Purple Bouquet -->
+            <div class="product" data-name="Purple Passion" data-price="Rs.6000"
+                data-description="An artistic arrangement of luxurious skincare, candles, and accessories in purple tones."
+                data-image="images/purple.webp"
+                data-items='["Lavender Body Mist", "Candle Set", "Purple Notebook", "Face Mask", "Decorative Vase"]'>
+                <img src="images/purple.webp" alt="Purple Gift Bouquet">
+                <div class="product-content">
+                    <h3>Purple Passion</h3>
+                    <p>Rs.6000</p>
+                    <button class="details-btn">Details</button>
+                </div>
+            </div>
+
+            <!-- Sage Green Bouquet -->
+            <div class="product" data-name="Sage Serenity" data-price="Rs.5800"
+                data-description="A calming selection of eco-friendly items, herbal teas, and soothing gifts in sage green."
+                data-image="images/green.webp"
+                data-items='["Herbal Tea Box", "Eco-Friendly Journal", "Aloe Skincare Kit", "Sage Candle", "Green Mug"]'>
+                <img src="images/green.webp" alt="Sage Green Gift Bouquet">
+                <div class="product-content">
+                    <h3>Sage Serenity</h3>
+                    <p>Rs.5800</p>
+                    <button class="details-btn">Details</button>
+                </div>
+            </div>
+
+            <!-- Red Bouquet -->
+            <div class="product" data-name="Radiant Red" data-price="Rs.6500"
+                data-description="A bold bouquet featuring gourmet chocolates, beauty products, and romantic accents in red."
+                data-image="images/red.webp"
+                data-items='["Red Lipstick", "Gourmet Truffles", "Silk Scarf", "Rose-Scented Candle", "Decorative Frame"]'>
+                <img src="images/red.webp" alt="Red Gift Bouquet">
+                <div class="product-content">
+                    <h3>Radiant Red</h3>
+                    <p>Rs.6500</p>
+                    <button class="details-btn">Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <img src="" alt="Product Image" id="modal-image">
+            <div class="details">
+                <h3 id="modal-name"></h3>
+                <p id="modal-description"></p>
+                <ul id="modal-items"></ul>
+                <p class="price" id="modal-price"></p>
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Daisy Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const modalImage = document.getElementById("modal-image");
+        const modalName = document.getElementById("modal-name");
+        const modalDescription = document.getElementById("modal-description");
+        const modalItems = document.getElementById("modal-items");
+        const modalPrice = document.getElementById("modal-price");
+        const modalClose = document.getElementById("modal-close");
+        const detailsButtons = document.querySelectorAll(".details-btn");
+        const cartCount = document.getElementById("cart-count");
+        const addToCartButton = document.getElementById("add-to-cart");
+
+        let cart = 0;
+
+        detailsButtons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const product = e.target.closest(".product");
+                const name = product.dataset.name;
+                const price = product.dataset.price;
+                const description = product.dataset.description;
+                const image = product.dataset.image;
+                const items = JSON.parse(product.dataset.items);
+
+                modalName.textContent = name;
+                modalDescription.textContent = description;
+                modalPrice.textContent = price;
+                modalImage.src = image;
+                modalItems.innerHTML = items.map(item => `<li>${item}</li>`).join(" ");
+
+                modal.classList.add("active");
+            });
+        });
+
+        addToCartButton.addEventListener("click", () => {
+            cart++;
+            cartCount.textContent = cart;
+            modal.classList.remove("active");
+        });
+
+        modalClose.addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) modal.classList.remove("active");
+        });
+        </script>
+        
+        <script>
+    var audio = document.getElementById("background-audio");
+
+    // to Play the audio when the Play button is clicked
+    document.getElementById("play-btn").addEventListener("click", function() {
+        audio.play();  
+        this.style.display = "none"; 
+        document.getElementById("stop-btn").style.display = "block"; 
+    });
+
+    // to Stop the audio when the Stop button is clicked
+    document.getElementById("stop-btn").addEventListener("click", function() {
+        audio.pause();  
+        this.style.display = "none"; 
+        document.getElementById("play-btn").style.display = "block"; 
+    });
+
+    </script>
+</body>
+
+</html>

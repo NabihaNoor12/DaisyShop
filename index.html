@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Shop - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+
+<body> 
+  <!-- Play Button -->
+  <button id="play-btn">Play Music</button>
+
+  <!-- Stop Button -->
+  <button id="stop-btn">Stop Music</button>
+
+  <!-- bg music -->
+    <audio id="background-audio" autoplay loop>
+        <source src="audio2.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <nav>
+        <!-- logo display in nav bar -->
+        <div class="logo">
+                <img src="logo.png" alt="Logo">
+        </div>
+
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="customs.html">Customs</a>
+        <a href="about.html">About Us</a>
+
+        <!-- cart icon in nav bar -->
+        <div class="cart-icon">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <section class="hero">
+       
+        <div class="hero-content" id="hero-content">
+            <h2>Welcome to Daisy Shop!</h2>
+            <p>Where every bouquet tells a story</p>
+        </div>
+        
+        <div class="scroll-down" onclick="scrollToContent()">↓ Scroll Down to Discover More ↓</div>
+
+    </section>
+
+    <section class="content" id="about">
+
+        <h2>About Our Shop</h2>
+        <p>
+            At Daisy Shop, we craft themed bouquets that are more than just flowers—they're delightful surprises! From color-coordinated elegance to playful themes, our bouquets are designed to suit every occasion. Hidden within are charming gifts to make your experience even more special.
+        </p>
+       
+        <div class="bouquet-list">
+            
+            <div class="bouquet-item">
+                <a href="shop.html" class="products" style="text-decoration: none; color: inherit; display: block; height: 40%; width: 40%; padding: 1em;">
+                    Gift Bouquets
+                </a>
+            </div>
+            
+            <div class="bouquet-item">
+                <a href="shop.html" class="products" style="text-decoration: none; color: inherit; display: block; height: 40%; width: 40%; padding: 1em;">
+                    Gift Boxes
+                </a>
+            </div>
+            
+            <div class="bouquet-item">
+                <a href="customs.html" style="text-decoration: none; color: inherit; display: block; height: 40%; width: 40%; padding: 1em;">
+                    Custom gifts
+                </a>
+            </div>
+
+        </div>
+   
+    </section>
+
+    <section>
+    
+        <div>
+            <div class="video-container">
+            <video autoplay muted loop>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Daisy Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fade-out effect for hero text
+        window.addEventListener('scroll', () => {
+            const heroContent = document.getElementById('hero-content');
+            const scrollPosition = window.scrollY;
+            const fadeStart = 100;
+            const fadeEnd = 500;
+        
+            if (scrollPosition < fadeStart) {
+                heroContent.style.opacity = 1;
+                heroContent.style.transform = 'translate(-50%, 0)';
+            } else if (scrollPosition > fadeEnd) {
+                heroContent.style.opacity = 0;
+                heroContent.style.transform = 'translate(-50%, -50px)';
+            } else {
+                const opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                const translateY = -(scrollPosition - fadeStart) / 6;
+                heroContent.style.opacity = opacity;
+                heroContent.style.transform = `translate(-50%, ${translateY}px)`;
+            }
+        });
+    </script>
+    
+    <script>
+        var audio = document.getElementById("background-audio");
+    // to Play the audio when the Play button is clicked
+    document.getElementById("play-btn").addEventListener("click", function() {
+        audio.play(); 
+        this.style.display = "none"; 
+        document.getElementById("stop-btn").style.display = "block"; 
+    });
+    
+    // to Stop the audio when the Stop button is clicked
+    document.getElementById("stop-btn").addEventListener("click", function() {
+        audio.pause();  
+        this.style.display = "none"; 
+        document.getElementById("play-btn").style.display = "block"; 
+    });
+    </script>
+
+</body>
+</html>

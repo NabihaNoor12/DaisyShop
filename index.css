@@ -1,0 +1,177 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fffaf0, #ffe4e8);
+    color: #8b3a62;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffc1cc;
+    padding: 1em 0;
+    border-bottom: 3px solid #ffb6c1;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(255, 182, 193, 0.3);
+}
+
+nav a {
+    text-decoration: none;
+    color: #8b3a62;
+    margin: 0 1.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out, transform 0.3s;
+}
+
+nav a:hover {
+    color: #d46a88;
+    transform: scale(1.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 6em 1em;
+    color: #ffc1cc;
+    position: relative;
+    min-height: 60vh;
+    background-image: url('Pink Feminine Desktop Wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    position: relative;
+    margin-top: 5rem;
+    text-shadow: 4px 4px #d46a88;
+}
+
+.hero-content h2 {
+    font-size: 4.5em;
+    margin: 0;
+    font-weight: 700;
+    color: #fffdfe;
+}
+
+.hero-content p {
+    font-size: 3em;
+    font-weight: 500;
+    font-family: 'Sacramento', cursive;
+    margin: 0;
+    color: #fefefe;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.7em;
+    color: #ffe4e8;
+    text-shadow: 2px 2px #d4829a;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.content {
+    padding: 4em 1em;
+    text-align: center;
+    background-image: url('Pink Feminine Desktop Wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fffaf0;
+}
+
+.content h2 {
+    color: #d46a88;
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+}
+
+.content p {
+    font-size: 1.5em;
+    line-height: 1.8;
+    color: #f9f9f9;
+    max-width: 800px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.content p:hover {
+    transform: scale(1.05);
+    color: #d46a88;
+}
+
+.bouquet-list {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 3em;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bouquet-item {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(to bottom right, #ffc1cc, #d46a88);
+    border-radius: 50%;
+    box-shadow: 0 8px 15px rgba(255, 182, 193, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #fffaf0;
+    text-align: center;
+    padding: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.bouquet-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.8);
+}
+
+footer {
+    text-align: center;
+    padding: 2em 0;
+    background-color: #ffc1cc;
+    border-top: 3px solid #ffb6c1;
+    box-shadow: 0 -4px 6px rgba(255, 182, 193, 0.3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    color: #8b3a62;
+}

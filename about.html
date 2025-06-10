@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Daisy Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Play Button -->
+  <button id="play-btn">Play Music</button>
+
+  <!-- Stop Button -->
+  <button id="stop-btn">Stop Music</button>
+    <audio id="background-audio" autoplay loop>
+        <source src="audio2.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+    </div>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="customs.html">Customs</a>
+        <a href="about.html">About Us</a>
+        <div class="cart-icon">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <section class="about-section">
+       
+        <h2>About Daisy Shop</h2>
+        <p>
+            Welcome to Daisy Shop! We're passionate about creating unique, themed bouquets that brighten up every occasion. From joyful celebrations to intimate gifts, we provide delightful surprises in every petal.
+            <br><br>
+            For more information, connect with us through our social channels.
+        </p>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank" class="social-button">Instagram</a>
+            <a href="mailto:contact@daisyshop.com" target="_blank" class="social-button">Email</a>
+            <a href="https://www.x.com" target="_blank" class="social-button">Twitter</a>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="text">
+            <h3>Our Shop Details:</h3>
+            <ul>
+                <li>Exclusive Themed Bouquets for Every Occasion</li>
+                <li>Customizable Gifts with Every Order</li>
+                <li>Fast & Secure Delivery Nationwide</li>
+                <li>Expert Florists Crafting Every Bouquet with Love</li>
+                <li>Gifts Hidden in Bouquets for a Sweet Surprise</li>
+            </ul>
+        </div>
+
+        <!-- QR Code -->
+        <div class="qr-code">
+            <h4>Scan to Visit Our Shop</h4>
+            <img src="daisyshop2025_qr.png" alt="QR Code">
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2025 Daisy Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var audio = document.getElementById("background-audio");
+    
+        // to Play the audio when the Play button is clicked
+        document.getElementById("play-btn").addEventListener("click", function() {
+            audio.play();  
+            this.style.display = "none"; 
+            document.getElementById("stop-btn").style.display = "block"; 
+        });
+    
+        // to Stop the audio when the Stop button is clicked
+        document.getElementById("stop-btn").addEventListener("click", function() {
+            audio.pause();  
+            this.style.display = "none"; 
+            document.getElementById("play-btn").style.display = "block"; 
+        });
+    </script>
+</body>
+
+</html>
